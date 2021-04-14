@@ -1,0 +1,234 @@
+@import url("https://fonts.googleapis.com/css2?family=Spartan:wght@400;700;800&display=swap");
+:root {
+  --clr-primary-500: hsl(333, 80%, 67%);
+  --clr-primary-800: hsl(300, 43%, 22%);
+  --clr-neutral-100: hsl(0, 0%, 100%);
+  --clr-neutral-200: hsl(300, 24%, 96%);
+  --clr-neutral-400: hsl(303, 10%, 53%);
+  --ff-primary: "spartan", sans-serif;
+  --fs-400: 0.8125rem;
+  --fs-500: 0.9375rem;
+  --fs-900: 3rem;
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[class],
+ol[class] {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+*::before,
+*::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+body {
+  width: 100%;
+  max-width: 100%;
+  min-height: 100vh;
+  font-family: var(--ff-primary);
+  line-height: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow-x: hidden;
+}
+
+.attribution {
+  padding-bottom: 1rem;
+}
+
+main {
+  width: 100%;
+  max-width: 72em;
+  margin: 0 auto;
+  margin-top: auto;
+  margin-bottom: auto;
+  padding: 4rem 1rem;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.main {
+  max-width: 25rem;
+  text-align: center;
+}
+.main__title {
+  margin: 0 1rem;
+  font-size: var(--fs-900);
+  color: var(--clr-primary-800);
+  margin-bottom: 1rem;
+}
+.main__summary {
+  color: var(--clr-neutral-400);
+  font-size: var(--fs-500);
+  line-height: 1.4;
+}
+
+@media (min-width: 876px) {
+  .main {
+    text-align: left;
+  }
+  .main__title {
+    margin: 0 0 0.5rem;
+  }
+}
+.rating-details {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 25rem;
+  color: var(--clr-primary-800);
+  font-weight: bold;
+  margin: 0 auto;
+  font-size: var(--fs-500);
+}
+
+.rating {
+  background: var(--clr-neutral-200);
+  padding: 1.1rem;
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+.rating + .rating {
+  margin-top: 1rem;
+}
+.rating:nth-child(2) {
+  transform: translateX(3rem);
+}
+.rating:last-child {
+  transform: translateX(6rem);
+}
+.rating .stars {
+  display: flex;
+  justify-content: center;
+  gap: 0 0.5rem;
+}
+@media (max-width: 1000px) {
+  .rating:nth-child(2) {
+    transform: translateX(0);
+  }
+  .rating:last-child {
+    transform: translateX(0);
+  }
+}
+
+@media (min-width: 876px) {
+  .rating {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+}
+.reviews {
+  font-size: var(--fs-500);
+  grid-column: span 2;
+  color: var(--clr-neutral-100);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  gap: 1rem;
+}
+
+.review {
+  display: grid;
+  grid-template-rows: 3rem 1fr;
+  grid-template-columns: 3rem 1fr;
+  gap: 1rem 1.5rem;
+  line-height: 1.5rem;
+  align-items: center;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  background: var(--clr-primary-800);
+}
+@media (min-width: 1000px) {
+  .review:nth-child(2) {
+    transform: translateY(1rem);
+  }
+  .review:last-child {
+    transform: translateY(2rem);
+  }
+}
+
+.profile-pic {
+  border-radius: 100px;
+}
+
+.status {
+  color: var(--clr-primary-500);
+}
+
+.quote {
+  grid-column: span 2;
+}
+
+/*# sourceMappingURL=style.css.map */

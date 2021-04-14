@@ -1,0 +1,39 @@
+$breakpoints: (
+    mobile: 0px,
+    mobile-tablet: 769px,
+    desktop: 1024px,
+    large-desktop: 1200px,
+    widescreen: 1440px
+);
+
+// $size = the name you enter when using the include
+// $device = the same as $size but in another class name
+// $ sizePx = the value of the $size / $ device defined in $breakpoints above
+@mixin breakpoint($size) {
+    @each $device, $sizePx in $breakpoints {
+
+        @if $size==$device {
+            @media screen and(max-width: $sizePx) {
+                @content;
+            }
+        }
+    }
+}
+
+@mixin flex-direction($position, $direction) {
+    display: flex;
+    justify-content: $position;
+    flex-direction: $direction;
+    align-items: center;
+}
+
+@mixin row() {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+@mixin col() {
+    display: flex;
+    flex-direction: column;
+}
